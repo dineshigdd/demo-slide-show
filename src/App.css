@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.container-home{
+  position: absolute;
+  z-index: 2;   
+  text-align: left;
+  padding-top: 13vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*creates an overlaying div covering the items in the carousel */
+.carousel-item::after{ 
+  content:"";
+  position:absolute;
+  z-index: 900; 
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));     
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.text-overlay{
+  margin-left: 2vw;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-overlay h1{
+  font-size: 8vmin;
+  line-height: 1em;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.text-overlay p{
+  font-weight: 500;
+  font-size: 3vmin;
+}
+
+.player-wrapper { 
+  position: relative;
+  padding-top: 56.25%; 
+  min-height: 100vh;/*streches the video player covering the viewport*/
+ 
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important; /*this is important if you add a YouTube vedio*/
+}
+
+/* this is if you add a YouTube vedio for covering the viewport on small devices */
+iframe {
+  min-width: 178vh;
+}
+
+.carousel-control-next, .carousel-control-prev, .carousel-indicator{
+  z-index: 2 !important;
+}
+
+
+.carousel-item{
+  height: 100vh;/*streches the carosel items covering the viewport */
+}
+
+
+ /* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+
+  .text-overlay{
+    margin-left: 1vw;
   }
-  to {
-    transform: rotate(360deg);
+
+} 
+
+ /* Small devices (less than 768px) */
+@media (max-width:768px) { 
+
+  .text-overlay{
+     margin-left: 8vw;
   }
+
 }
