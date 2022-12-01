@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// you do not need this as you add the CDN in index.html. I you do not add CDN for CSS in index.html , uncomment import statement below
+// import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 
 
